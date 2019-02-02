@@ -397,5 +397,23 @@ namespace WcfService1
             return tablaDatos;
         }
 
+        public string ConsultarUsuario(string usuario,string contraseña)
+        {
+            string nombre="";
+            DataTable tablaDatos = new DataTable();
+            string CadenaConexion = Cadena;
+            SqlConnection conectar = new SqlConnection(CadenaConexion);
+            conectar.Open();
+            string sql = string.Format("SELECT [Log_Usuario],[Log_Contraseña],[Log_Alias] FROM [dbo].[Usuario] WHERE Log_Usuario='{0}' AND Log_Contraseña='{1}'",usuario,contraseña);
+            SqlDataAdapter cmd = new SqlDataAdapter(sql, conectar);
+            DataSet data = new DataSet();
+            cmd.Fill(data, "datos");
+            tablaDatos = data.Tables[0];
+            if (tablaDatos.Rows.Count>0)
+            {
+                nombre= tablaDatos.Rows[0]["Log_Alias"].ToString() + " " + sql;
+            }
+            return nombre;
+        }
     }
 }

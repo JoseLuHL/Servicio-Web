@@ -52,6 +52,9 @@ namespace WcfService1
 
         [OperationContract]
         DataTable TodosPacientes();
+
+        [OperationContract]
+        string ConsultarUsuario(string usuario, string contraseña);
     }
     // Utilice un contrato de datos, como se ilustra en el ejemplo siguiente, para agregar tipos compuestos a las operaciones de servicio.
     [DataContract]
