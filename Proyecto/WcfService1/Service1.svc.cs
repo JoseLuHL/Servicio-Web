@@ -51,7 +51,6 @@ namespace WcfService1
 
             return res;
         }
-
         public string server()
         {
             string res = "";
@@ -74,7 +73,6 @@ namespace WcfService1
 
             return res;
         }
-
         //public static MySqlConnection probarConexion()
         //{
         //    MySqlConnection con;
@@ -90,7 +88,6 @@ namespace WcfService1
         //    con.Open();//se abre la conexion
         //    return con;
         //}
-
         public string obtenerRegistro()
         {
             DataTable tablaDatos = new DataTable();
@@ -257,7 +254,6 @@ namespace WcfService1
             return tablaDatos;
         }
         //await Task.Run(() => { respuesta = service.InsertarPedido(DateTime.Now.Date.Date,true,TxtIdentificacion.Text,Convert.ToDouble(TxtSubTotal.Text),true,"A", codproducto, cantidad, vardetalle); });
-
         public string InsertarPedido (string identificacion,double subtotal,List<string> codproducto, List<int> cantidad, List<int> vardetalle)
         {
             string respueesta = "";
@@ -301,7 +297,6 @@ namespace WcfService1
             }
             return respueesta;
         }
-
         public DataTable ConsultarMultiple(string Criterio, string condicion)
         {
 
@@ -380,7 +375,6 @@ namespace WcfService1
             tablaDatos = data.Tables[0];
             return tablaDatos;
         }
-
         public DataTable TodosPacientes()
         {
             DataTable tablaDatos = new DataTable();
@@ -396,7 +390,6 @@ namespace WcfService1
             tablaDatos = data.Tables[0];
             return tablaDatos;
         }
-
         public string ConsultarUsuario(string usuario,string contraseña)
         {
             string nombre="";
